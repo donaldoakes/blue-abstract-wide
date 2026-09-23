@@ -25,9 +25,9 @@
 
     <!-- shows some debug information on the screen -->
     <window name="osd_debug">
-        
-        <!-- The information and the clock that is 
-             shown at the top left of each screen -->       
+
+        <!-- The information and the clock that is
+             shown at the top left of each screen -->
         <imagetype name="header_background">
             <area>-1,-1,560,50</area>
             <filename>images/media/header_left.png</filename>
@@ -56,7 +56,7 @@
             <line color="#AAAAAA" alpha="150" width="1" />
             <cornerradius>10</cornerradius>
         </shape>
-        
+
         <textarea name="filename_label">
             <area>200,215,210,36</area>
             <multiline>no</multiline>
@@ -70,7 +70,7 @@
             <area>420,215,635,36</area>
             <align>left,vcenter</align>
         </textarea>
-        
+
         <!-- separates the filename from the other information -->
         <shape name="filename_separator">
             <area>184,265,888,1</area>
@@ -79,7 +79,7 @@
             <line color="#AAAAAA" alpha="150" width="1" />
             <cornerradius>10</cornerradius>
         </shape>
-        
+
         <!-- First column with information -->
         <textarea name="storagerate_label" from="filename_label">
             <area>200,275,210,36</area>
@@ -106,7 +106,7 @@
             <position>200,475</position>
             <value>CPUs :</value>
         </textarea>
-        
+
         <textarea name="storagerate" from="filename_label">
             <area>420,275,200,36</area>
             <align>left,vcenter</align>
@@ -186,8 +186,8 @@
     <window name="osd_message">
         <area>0,0,1280,720</area>
 
-        <!-- The information and the clock that is 
-             shown at the top left of each screen -->       
+        <!-- The information and the clock that is
+             shown at the top left of each screen -->
         <imagetype name="header_background">
             <area>-1,-1,560,50</area>
             <filename>images/media/header_left.png</filename>
@@ -206,7 +206,7 @@
             <font>text</font>
             <scroll direction="horizontal" rate="35"/>
         </textarea>
-       
+
     </window>
 
 
@@ -216,9 +216,9 @@
     <!-- shows an input message on the screen -->
     <window name="osd_input">
         <area>0,0,1280,720</area>
-        
-        <!-- The information and the clock that is 
-             shown at the top left of each screen -->       
+
+        <!-- The information and the clock that is
+             shown at the top left of each screen -->
         <imagetype name="header_background">
             <area>-1,-1,560,50</area>
             <filename>images/media/header_left.png</filename>
@@ -245,13 +245,13 @@
 
 
 
-    <!-- shows the title and the progress of 
+    <!-- shows the title and the progress of
          the current recording/movie/tv -->
     <window name="osd_status">
         <area>0,0,1280,720</area>
-        
-        <!-- The information and the clock that is 
-             shown at the top left of each screen -->       
+
+        <!-- The information and the clock that is
+             shown at the top left of each screen -->
         <imagetype name="header_background">
             <area>-1,-1,560,50</area>
             <filename>images/media/header_left.png</filename>
@@ -262,7 +262,7 @@
             <template>%DATE%, %TIME%</template>
             <align>left,vcenter</align>
         </clock>
-        
+
         <!-- the background image of the popup dialog box -->
         <shape name="background">
             <area>220,600,830,87</area>
@@ -280,7 +280,7 @@
             <scroll direction="horizontal" rate="35"/>
             <font>text</font>
         </textarea>
-        
+
         <textarea name="description" from="title">
             <area>640,607,395,36</area>
             <align>right,vcenter</align>
@@ -313,13 +313,13 @@
 
 
 
-    <!-- shows the icon and the details/description 
+    <!-- shows the icon and the details/description
          of the current recording/movie/tv -->
     <window name="program_info">
         <area>0,0,1280,720</area>
 
-        <!-- The information and the clock that is 
-             shown at the top left of each screen -->       
+        <!-- The information and the clock that is
+             shown at the top left of each screen -->
         <imagetype name="header_background">
             <area>-1,-1,560,50</area>
             <filename>images/media/header_left.png</filename>
@@ -356,7 +356,7 @@
             <template>%STARTDATE% %STARTTIME%-%ENDTIME% : %LENMINS%</template>
         </textarea>
 
-        <!-- separates the title and channel and the 
+        <!-- separates the title and channel and the
              status icons from the description -->
         <shape name="program_info_separator">
             <area>106,535,1068,1</area>
@@ -364,15 +364,17 @@
             <line color="#AAAAAA" alpha="150" width="1" />
         </shape>
 
-        <!-- show the channel or the channel name if 
+        <!-- show the channel or the channel name if
              no channel icon is available -->
 
         <textarea name="channame">
             <area>130,560,113,80</area>
             <align>allcenter</align>
             <multiline>yes</multiline>
-            <cutdown>no</cutdown>
+            <cutdown>yes</cutdown>
+<!--
             <scroll direction="vertical" rate="10"/>
+-->
             <font>text</font>
         </textarea>
 
@@ -382,7 +384,7 @@
             <filename>images/media/channel_bg.png</filename>
             <alpha>180</alpha>
         </imagetype>
-        
+
         <imagetype name="iconpath">
             <area>120,550,133,100</area>
             <mask>images/media/channel_nfmask.png</mask>
@@ -742,21 +744,21 @@
                 </imagetype>
             </state>
         </statetype>
-        
+
     </window>
-    
-    
 
 
 
 
-    <!-- shows the icon and the details/description 
+
+
+    <!-- shows the icon and the details/description
          of the current recording/movie/tv -->
     <window name="browse_info">
         <area>0,0,1280,720</area>
-        
-        <!-- The information and the clock that is 
-             shown at the top left of each screen -->       
+
+        <!-- The information and the clock that is
+             shown at the top left of each screen -->
         <imagetype name="header_background">
             <area>-1,-1,560,50</area>
             <filename>images/media/header_left.png</filename>
@@ -793,7 +795,7 @@
             <template>%STARTTIME%-%ENDTIME% : %LENMINS%</template>
         </textarea>
 
-        <!-- separates the title and channel and the 
+        <!-- separates the title and channel and the
              status icons from the description -->
         <shape name="program_info_separator">
             <area>106,535,1068,1</area>
@@ -801,7 +803,7 @@
             <line color="#AAAAAA" alpha="150" width="1" />
         </shape>
 
-        <!-- show the channel or the channel name if 
+        <!-- show the channel or the channel name if
              no channel icon is available -->
 
         <textarea name="channame">
@@ -819,7 +821,7 @@
             <filename>images/media/channel_bg.png</filename>
             <alpha>180</alpha>
         </imagetype>
-        
+
         <imagetype name="iconpath">
             <area>120,550,133,100</area>
             <mask>images/media/channel_nfmask.png</mask>
@@ -854,13 +856,13 @@
             <align>left,top</align>
             <font>text</font>
             <template>%"|SUBTITLE|" %%LONGREPEAT%%(|STARS|) %%DESCRIPTION%</template>
-        </textarea>       
-       
+        </textarea>
+
         <progressbar name="elapsedpercent">
             <area>560,500,600,20</area>
             <layout>horizontal</layout>
             <style>reveal</style>
-            
+
             <shape name="progressimage_background">
                 <area>0,0,600,20</area>
                 <type>roundbox</type>
@@ -877,18 +879,18 @@
         </progressbar>
 
     </window>
-    
-    
 
 
 
-    <!-- dialog box that shows the current channel 
+
+
+    <!-- dialog box that shows the current channel
          options. The user can edit these -->
     <window name="ChannelEditor">
         <area>0,0,1280,720</area>
 
-        <!-- The information and the clock that is 
-             shown at the top left of each screen -->       
+        <!-- The information and the clock that is
+             shown at the top left of each screen -->
         <imagetype name="header_background">
             <area>-1,-1,560,50</area>
             <filename>images/media/header_left.png</filename>
@@ -1016,7 +1018,7 @@
             <line color="#AAAAAA" alpha="150" width="1" />
             <cornerradius>10</cornerradius>
         </shape>
-        
+
         <button name="probe">
             <area>465,480,150,36</area>
             <statetype name="buttonstate">
@@ -1077,9 +1079,9 @@
     <!-- TODO: move down -->
     <!-- dialog box where the user can edit the current program -->
     <window name="osd_program_editor">
-        
-        <!-- The information and the clock that is 
-             shown at the top left of each screen -->       
+
+        <!-- The information and the clock that is
+             shown at the top left of each screen -->
         <imagetype name="header_background">
             <area>-1,-1,560,50</area>
             <filename>images/media/header_left.png</filename>
@@ -1114,22 +1116,22 @@
             <area>640,108,200,36</area>
             <align>right,vcenter</align>
         </textarea>
-        
+
         <!-- displays the frame of the shown image -->
         <textarea name="framedisplay" from="title">
             <area>830,108,200,36</area>
             <align>right,vcenter</align>
             <template>Frames: %1</template>
         </textarea>
-        
-        <!-- shows how far pressing left/right 
+
+        <!-- shows how far pressing left/right
              will jump within the recording -->
         <textarea name="seekamount" from="title">
             <area>830,175,200,36</area>
             <align>right,vcenter</align>
             <template>Seek: %1</template>
         </textarea>
-        
+
         <!-- description of the current action, like cutting... -->
         <textarea name="cutindicator" from="title">
             <area>540,175,200,36</area>
@@ -1169,7 +1171,7 @@
                 <area>0,16,2,20</area>
                 <fill color="#AAAAAA" alpha="255" />
             </shape>
-            
+
             <shape name="keeptoright">
                 <area>0,16,2,12</area>
                 <fill color="#FFFFFF" alpha="255" />
@@ -1178,25 +1180,25 @@
                 <area>0,16,2,12</area>
                 <fill color="#FFFFFF" alpha="255" />
             </shape>
-            
+
         </editbar>
     </window>
-    
-    
 
 
 
-    <!-- dialog box that shows the most 
+
+
+    <!-- dialog box that shows the most
          important options and controls -->
     <window name="MythPopupBox">
-    
-        <!-- darkens the entire background so 
+
+        <!-- darkens the entire background so
              that the popup is better readable -->
         <shape name="darken_background">
             <type>box</type>
             <fill color="#000000" alpha="110" />
         </shape>
-        
+
         <!-- the background image of the popup dialog box -->
         <shape name="dialog_background">
             <area>450,130,380,388</area>
@@ -1214,12 +1216,12 @@
             <font>text</font>
             <scroll direction="vertical" rate="10"/>
         </textarea>
-        
+
         <!-- this needs to be here to prevent errors in the logs. -->
         <textarea name="title" from="messagearea">
             <area>465,140,350,60</area>
         </textarea>
-        
+
         <shape name="messagearea_separator">
             <area>451,210,378,1</area>
             <type>roundbox</type>
@@ -1235,14 +1237,14 @@
             <scrollstyle>free</scrollstyle>
             <wrapstyle>selection</wrapstyle>
             <buttonarea>0,0,100%,100%</buttonarea>
-        
+
             <!-- states that the buttonlist can have -->
             <statetype name="buttonitem">
-        
+
                 <!-- active menu entry -->
                 <state name="active">
                     <area>0,0,350,36</area>
-                    
+
                     <shape name="background">
                         <area>0,0,100%,100%</area>
                         <type>roundbox</type>
@@ -1250,7 +1252,7 @@
                         <line color="#535353" alpha="100" width="1" />
                         <cornerradius>8</cornerradius>
                     </shape>
-                    
+
                     <!-- the button's text -->
                     <textarea name="buttontext">
                         <area>8,0,100%-16,36</area>
@@ -1260,7 +1262,7 @@
                         <align>left,vcenter</align>
                         <scroll direction="horizontal" rate="35"/>
                     </textarea>
-                    
+
                     <!-- indicates the button contains a submenu -->
                     <imagetype name="buttonarrow">
                         <area>100%-26,4,18,27</area>
@@ -1268,12 +1270,12 @@
                         <filename>images/icons/button_arrow_right.png</filename>
                     </imagetype>
                 </state>
-                
+
                 <!-- inactive menu entry -->
                 <state name="inactive" from="active">
                     <area>0,0,350,36</area>
                 </state>
-                
+
                 <!-- menu entry has been selected and is active -->
                 <state name="selectedactive" from="active">
                     <area>0,0,350,36</area>
@@ -1284,7 +1286,7 @@
                         <line color="#3697ef" alpha="200" width="1" />
                         <cornerradius>8</cornerradius>
                     </shape>
-                    
+
                     <!-- indicates the button contains a submenu -->
                     <imagetype name="buttonarrow">
                         <area>100%-26,4,18,27</area>
@@ -1292,7 +1294,7 @@
                         <filename>images/icons/button_arrow_right.png</filename>
                     </imagetype>
                 </state>
-                
+
                 <!-- menu entry has been selected and is inactive -->
                 <state name="selectedinactive" from="active">
                     <area>0,0,350,36</area>
@@ -1305,7 +1307,7 @@
                     </shape>
                 </state>
             </statetype>
-            
+
             <!-- show arrows to indicates that there are
                 more menu entries above the first visible menu -->
             <statetype name="upscrollarrow">
@@ -1325,7 +1327,7 @@
                     </imagetype>
                 </state>
             </statetype>
-            
+
             <!-- show arrows to indicates that there are
                 more menu entries below the last visible menu -->
             <statetype name="downscrollarrow">
@@ -1352,17 +1354,17 @@
 
 
 
-    <!-- dialog box that shows the most 
+    <!-- dialog box that shows the most
          important options and controls -->
     <window name="MythDialogBox">
-    
-        <!-- darkens the entire background so 
+
+        <!-- darkens the entire background so
              that the popup is better readable -->
         <shape name="darken_background">
             <type>box</type>
             <fill color="#000000" alpha="110" />
         </shape>
-        
+
         <!-- the background image of the popup dialog box -->
         <shape name="dialog_background">
             <area>450,130,380,388</area>
@@ -1380,12 +1382,12 @@
             <font>text</font>
             <scroll direction="vertical" rate="10"/>
         </textarea>
-        
+
         <!-- this needs to be here to prevent errors in the logs. -->
         <textarea name="title" from="messagearea">
             <area>465,140,350,60</area>
         </textarea>
-        
+
         <shape name="messagearea_separator">
             <area>451,210,378,1</area>
             <type>roundbox</type>
@@ -1401,14 +1403,14 @@
             <scrollstyle>free</scrollstyle>
             <wrapstyle>selection</wrapstyle>
             <buttonarea>0,0,100%,100%</buttonarea>
-        
+
             <!-- states that the buttonlist can have -->
             <statetype name="buttonitem">
-        
+
                 <!-- active menu entry -->
                 <state name="active">
                     <area>0,0,350,36</area>
-                    
+
                     <shape name="background">
                         <area>0,0,100%,100%</area>
                         <type>roundbox</type>
@@ -1416,7 +1418,7 @@
                         <line color="#535353" alpha="100" width="1" />
                         <cornerradius>8</cornerradius>
                     </shape>
-                    
+
                     <!-- the button's text -->
                     <textarea name="buttontext">
                         <area>8,0,100%-16,36</area>
@@ -1426,7 +1428,7 @@
                         <align>left,vcenter</align>
                         <scroll direction="horizontal" rate="35"/>
                     </textarea>
-                    
+
                     <!-- indicates the button contains a submenu -->
                     <imagetype name="buttonarrow">
                         <area>100%-26,4,18,27</area>
@@ -1434,12 +1436,12 @@
                         <filename>images/icons/button_arrow_right.png</filename>
                     </imagetype>
                 </state>
-                
+
                 <!-- inactive menu entry -->
                 <state name="inactive" from="active">
                     <area>0,0,350,36</area>
                 </state>
-                
+
                 <!-- menu entry has been selected and is active -->
                 <state name="selectedactive" from="active">
                     <area>0,0,350,36</area>
@@ -1450,7 +1452,7 @@
                         <line color="#3697ef" alpha="200" width="1" />
                         <cornerradius>8</cornerradius>
                     </shape>
-                    
+
                     <!-- indicates the button contains a submenu -->
                     <imagetype name="buttonarrow">
                         <area>100%-26,4,18,27</area>
@@ -1458,7 +1460,7 @@
                         <filename>images/icons/button_arrow_right.png</filename>
                     </imagetype>
                 </state>
-                
+
                 <!-- menu entry has been selected and is inactive -->
                 <state name="selectedinactive" from="active">
                     <area>0,0,350,36</area>
@@ -1471,7 +1473,7 @@
                     </shape>
                 </state>
             </statetype>
-            
+
             <!-- show arrows to indicates that there are
                 more menu entries above the first visible menu -->
             <statetype name="upscrollarrow">
@@ -1491,7 +1493,7 @@
                     </imagetype>
                 </state>
             </statetype>
-            
+
             <!-- show arrows to indicates that there are
                 more menu entries below the last visible menu -->
             <statetype name="downscrollarrow">

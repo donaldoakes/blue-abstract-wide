@@ -2,7 +2,7 @@
 <!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
 <mythuitheme>
 
-    <!-- The "View Cast" popup which shows details 
+    <!-- The "View Cast" popup which shows details
         about the cast of the selected video  -->
     <window name="castpopup">
 
@@ -33,7 +33,7 @@
 
 
 
-    <!-- The "View Plot" popup which shows details 
+    <!-- The "View Plot" popup which shows details
         about the description of the selected video  -->
     <window name="descriptionpopup">
 
@@ -54,7 +54,7 @@
         <shape name="title_separator" from="base_background_shape">
             <area>341,240,608,1</area>
         </shape>
-        
+
         <!-- list with the search phrases -->
         <textarea name="description" from="base_textarea">
             <area>355,255,580,238</area>
@@ -62,7 +62,7 @@
             <align>left,top</align>
             <scroll direction="vertical" rate="10"/>
         </textarea>
-        
+
         <shape name="button_separator" from="base_background_shape">
             <area>341,510,608,1</area>
         </shape>
@@ -73,83 +73,227 @@
 
     </window>
 
-
-
-
-
-    <!-- The Video Gallery view type which shows 
+    <!-- The Video Gallery view type which shows
         pretty much only the videos and nothing else. -->
     <window name="gallery" include="base_video.xml">
 
         <imagetype name="background" from="base_background"/>
 
         <textarea name="heading" from="base_heading">
-            <position>0,0</position>
             <textarea name="text">
-                <value>Video Gallery</value>
+                <value>Pre-Code Gallery</value>
             </textarea>
         </textarea>
-        
+        <!--
         <shape name="video_gallery_background_bottom" from="base_background_shape">
             <area>-15,670,1310,38</area>
         </shape>
-
+        -->
         <textarea name="novideos" from="base_textarea">
             <area>20,675,1240,30</area>
             <multiline>yes</multiline>
             <align>allcenter</align>
-            <value>No videos in library or files are being loaded...</value>
+            <value>No videos in library or file are being loaded..."</value>
         </textarea>
 
-        <!-- Show the title, season, episode and time -->
-        <textarea name="title" from="base_textarea">
-            <area>380,675,520,30</area>
-            <align>allcenter</align>
-        </textarea>
-        <textarea name="season_label" from="base_textarea" depends="season">
-            <area>20,675,120,30</area>
-            <align>right,vcenter</align>
-            <value>Season:</value>
-        </textarea>
-        <textarea name="season" from="base_textarea">
-            <area>150,675,50,30</area>
-            <align>left,vcenter</align>
-        </textarea>
-        <textarea name="episode_label" from="base_textarea" depends="episode">
-            <area>200,675,120,30</area>
-            <align>right,vcenter</align>
-            <value>Episode:</value>
-        </textarea>
-        <textarea name="episode" from="base_textarea">
-            <area>330,675,50,30</area>
-            <align>left,vcenter</align>
-        </textarea>
-        <imagetype name="userratingstate_background" from="base_rating_background">
-            <position>1000,680</position>
-        </imagetype>
-        <statetype name="userratingstate" from="base_rating">
-            <position>1000,680</position>
-        </statetype>
-        <textarea name="position" from="base_textarea">
-            <area>1100,675,150,30</area>
-            <align>right,vcenter</align>
-        </textarea>
-        
         <shape name="video_gallery_list_background" from="base_background_shape">
-            <area>25,50,1235,610</area>
+            <area>5,35,1272,625</area>
         </shape>
         <group name="video_gallery_list_group" from="base_video_gallery_list_group">
-            <area>40,65,1200,580</area>
+            <area>10,40,1267,620</area>
             <buttonlist name="videos">
-                <area>0,0,1200,580</area>
-                <buttonarea>0,0,1240,580</buttonarea>
+                <area>0,0,100%,100%</area>
+                <buttonarea>0,0,100%,100%</buttonarea>
+                <spacing>7</spacing>
             </buttonlist>
         </group>
 
+
+        <group name="video_gallery_description_group">
+            <position>5,665</position>
+
+            <shape name="video_description_background" from="base_background_shape">
+                <area>0,0,1272,50</area>
+            </shape>
+
+            <textarea name="title" from="base_textarea">
+                <template>%TITLE% (%YEAR%)</template>
+                <area>10,2,100%,100%</area>
+                <multiline>no</multiline>
+                <cutdown>yes</cutdown>
+                <font>descrip</font>
+            </textarea>
+        </group>
+
+        <statetype name="userratingstate" from="base_rating">
+            <position>1000,680</position>
+        </statetype>
     </window>
 
+    <window name="gallery2" include="base_video.xml">
+
+        <imagetype name="background" from="base_background"/>
+
+        <textarea name="heading" from="base_heading">
+            <textarea name="text">
+                <value>Horror Gallery</value>
+            </textarea>
+        </textarea>
+        <!--
+        <shape name="video_gallery_background_bottom" from="base_background_shape">
+            <area>-15,670,1310,38</area>
+        </shape>
+        -->
+        <textarea name="novideos" from="base_textarea">
+            <area>20,675,1240,30</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>No videos in library or file are being loaded..."</value>
+        </textarea>
+
+        <shape name="video_gallery_list_background" from="base_background_shape">
+            <area>5,35,1272,625</area>
+        </shape>
+        <group name="video_gallery_list_group" from="base_video_gallery_list_group">
+            <area>10,40,1267,620</area>
+            <buttonlist name="videos">
+                <area>0,0,100%,100%</area>
+                <buttonarea>0,0,100%,100%</buttonarea>
+                <spacing>7</spacing>
+            </buttonlist>
+        </group>
 
 
+        <group name="video_gallery_description_group">
+            <position>5,665</position>
+
+            <shape name="video_description_background" from="base_background_shape">
+                <area>0,0,1272,50</area>
+            </shape>
+
+            <textarea name="title" from="base_textarea">
+                <template>%TITLE% (%YEAR%)</template>
+                <area>10,2,100%,100%</area>
+                <multiline>no</multiline>
+                <cutdown>yes</cutdown>
+                <font>descrip</font>
+            </textarea>
+        </group>
+
+        <statetype name="userratingstate" from="base_rating">
+            <position>1000,680</position>
+        </statetype>
+    </window>
+
+    <window name="gallery3" include="base_video.xml">
+
+        <imagetype name="background" from="base_background"/>
+
+        <textarea name="heading" from="base_heading">
+            <textarea name="text">
+                <value>Noir Gallery</value>
+            </textarea>
+        </textarea>
+        <!--
+        <shape name="video_gallery_background_bottom" from="base_background_shape">
+            <area>-15,670,1310,38</area>
+        </shape>
+        -->
+        <textarea name="novideos" from="base_textarea">
+            <area>20,675,1240,30</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>No videos in library or file are being loaded..."</value>
+        </textarea>
+
+        <shape name="video_gallery_list_background" from="base_background_shape">
+            <area>5,35,1272,625</area>
+        </shape>
+        <group name="video_gallery_list_group" from="base_video_gallery_list_group">
+            <area>10,40,1267,620</area>
+            <buttonlist name="videos">
+                <area>0,0,100%,100%</area>
+                <buttonarea>0,0,100%,100%</buttonarea>
+                <spacing>7</spacing>
+            </buttonlist>
+        </group>
+
+
+        <group name="video_gallery_description_group">
+            <position>5,665</position>
+
+            <shape name="video_description_background" from="base_background_shape">
+                <area>0,0,1272,50</area>
+            </shape>
+
+            <textarea name="title" from="base_textarea">
+                <template>%TITLE% (%YEAR%)</template>
+                <area>10,2,100%,100%</area>
+                <multiline>no</multiline>
+                <cutdown>yes</cutdown>
+                <font>descrip</font>
+            </textarea>
+        </group>
+
+        <statetype name="userratingstate" from="base_rating">
+            <position>1000,680</position>
+        </statetype>
+    </window>
+
+    <window name="gallery4" include="base_video.xml">
+
+        <imagetype name="background" from="base_background"/>
+
+        <textarea name="heading" from="base_heading">
+            <textarea name="text">
+                <value>Silent Gallery</value>
+            </textarea>
+        </textarea>
+        <!--
+        <shape name="video_gallery_background_bottom" from="base_background_shape">
+            <area>-15,670,1310,38</area>
+        </shape>
+        -->
+        <textarea name="novideos" from="base_textarea">
+            <area>20,675,1240,30</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>No videos in library or file are being loaded..."</value>
+        </textarea>
+
+        <shape name="video_gallery_list_background" from="base_background_shape">
+            <area>5,35,1272,625</area>
+        </shape>
+        <group name="video_gallery_list_group" from="base_video_gallery_list_group">
+            <area>10,40,1267,620</area>
+            <buttonlist name="videos">
+                <area>0,0,100%,100%</area>
+                <buttonarea>0,0,100%,100%</buttonarea>
+                <spacing>7</spacing>
+            </buttonlist>
+        </group>
+
+
+        <group name="video_gallery_description_group">
+            <position>5,665</position>
+
+            <shape name="video_description_background" from="base_background_shape">
+                <area>0,0,1272,50</area>
+            </shape>
+
+            <textarea name="title" from="base_textarea">
+                <template>%TITLE% (%YEAR%)</template>
+                <area>10,2,100%,100%</area>
+                <multiline>no</multiline>
+                <cutdown>yes</cutdown>
+                <font>descrip</font>
+            </textarea>
+        </group>
+
+        <statetype name="userratingstate" from="base_rating">
+            <position>1000,680</position>
+        </statetype>
+    </window>
 
 
     <!-- Shows a horizontal list of videos and only the
@@ -165,14 +309,14 @@
                 <value>Video Browser</value>
             </textarea>
         </textarea>
-        
+
         <shape name="video_background" from="base_background_shape">
             <area>90,55,720,395</area>
         </shape>
         <group name="video_detailed_description_group" from="base_video_detailed_description_group">
             <position>90,55</position>
         </group>
-        
+
         <!-- this is the background behind the horizontal video list -->
         <shape name="video_gallery_list_background" from="base_background_shape">
             <area>-10,475,1300,220</area>
@@ -192,12 +336,12 @@
 
 
 
-    <!-- The manager screen shows a list of all videos in 
+    <!-- The manager screen shows a list of all videos in
         two rows and some video details at the bottom -->
     <window name="manager" include="base_video.xml">
 
         <imagetype name="fanart" from="base_background"/>
-        
+
         <textarea name="heading" from="base_heading">
             <position>0,0</position>
             <textarea name="text">
@@ -229,10 +373,6 @@
 
     </window>
 
-
-
-
-
     <!-- The List View screen shows a list of videos like in a file browser. there are
         two columns like in the music plugin where the user can navigate
         through the videos and see some details at the bottom -->
@@ -242,51 +382,114 @@
 
         <!-- The heading (name) of the screen -->
         <textarea name="heading" from="base_heading">
-            <position>0,0</position>
             <textarea name="text">
-                <value>Video Tree</value>
+                <value>Video List</value>
             </textarea>
         </textarea>
-        
-        <shape name="coverart_background" from="base_background_shape">
-            <area>110,85,275,385</area>
-        </shape>
-        <group name="video_large_cover_group" from="base_video_large_cover_group">
-            <position>105,80</position>
-        </group>
 
         <!-- this is the background behind the video directory list -->
         <shape name="video_tree_background" from="base_background_shape">
-            <area>400,85,745,385</area>
+            <area>5,35,1272,615</area>
         </shape>
-
-        <!-- shows the current path and where we are in the video tree -->
-        <textarea name="breadcrumbs" from="base_textarea">
-            <area>420,95,530,36</area>
-            <cutdown>left</cutdown>
-        </textarea>
-
-        <!-- shows the selected video number -->
-        <textarea name="position" from="base_textarea">
-            <area>960,95,165,36</area>
-            <align>right,vcenter</align>
-        </textarea>
 
         <!-- shows the directory structure of the videos -->
         <buttontree name="videos">
-            <area>418,135,715,316</area>
-            <numlists>2</numlists>
+            <area>10,40,1267,615</area>
+            <numlists>3</numlists>
             <spacing>5</spacing>
+            <columnwidths>200,400,650</columnwidths>
+            <!--
             <buttonlist name="listtemplate" from="base_buttonlist">
-                <buttonarea>0,0,715,316</buttonarea>
+            <buttonarea>0,0,250,400</buttonarea>
+            </buttonlist>
+            -->
+            <buttonlist name="listtemplate">
+                <layout>vertical</layout>
+                <spacing>5</spacing>
+                <scrollstyle>free</scrollstyle>
+                <wrapstyle>selection</wrapstyle>
+                <buttonarea>0,0,100%,100%</buttonarea>
+
+                <!-- states that the buttonlist can have -->
+                <statetype name="buttonitem">
+
+                    <!-- active menu entry -->
+                    <state name="active">
+                        <area>0,0,100%,36</area>
+                            <shape name="background" from="base_button_shape_active" />
+
+                            <!-- the button's text -->
+                            <textarea name="buttontext" from="base_textarea">
+                                <area>8,0,100%-50,36</area>
+                            </textarea>
+
+                        <!-- indicates the button contains a submenu -->
+                        <imagetype name="buttonarrow" from="base_icon_inactive">
+                            <position>100%-26,4</position>
+                            <filename>images/icons/button_arrow_right.png</filename>
+                        </imagetype>
+                    </state>
+
+                    <!-- inactive menu entry -->
+                    <state name="inactive" from="active">
+                        <shape name="background" from="base_button_shape_inactive" />
+                    </state>
+
+                    <!-- menu entry has been selected and is active -->
+                    <state name="selectedactive" from="active">
+                        <shape name="background" from="base_button_shape_selectedactive" />
+
+                        <!-- indicates the button contains a submenu -->
+                        <imagetype name="buttonarrow" from="base_icon_selected">
+                            <position>100%-26,4</position>
+                            <filename>images/icons/button_arrow_right.png</filename>
+                        </imagetype>
+                    </state>
+
+                    <!-- menu entry has been selected and is inactive -->
+                    <state name="selectedinactive" from="active">
+                        <shape name="background" from="base_button_shape_selectedinactive" />
+                    </state>
+
+                </statetype>
+
+                <!-- show arrows to indicates that there are
+                     more menu entries above the first visible menu -->
+                <statetype name="upscrollarrow">
+                    <position>100%-30,5</position>
+                    <state type="full">
+                        <imagetype name="upoff" from="base_icon_selected">
+                            <filename>images/icons/button_arrow_up.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
+
+                <!-- show arrows to indicates that there are
+                     more menu entries below the last visible menu -->
+                <statetype name="downscrollarrow">
+                    <position>100%-30,100%-40</position>
+                    <state type="full">
+                        <imagetype name="dnoff" from="base_icon_selected">
+                            <filename>images/icons/button_arrow_down.png</filename>
+                        </imagetype>
+                    </state>
+                </statetype>
             </buttonlist>
         </buttontree>
 
-        <group name="video_description_group" from="base_video_description_group">
-            <position>20,490</position>
-        </group>
-        <group name="video_details_group" from="base_video_details_group">
-            <position>760,490</position>
+        <group name="video_description_group">
+            <position>5,663</position>
+
+            <shape name="video_description_background" from="base_background_shape">
+                <area>0,0,1272,50</area>
+            </shape>
+
+            <textarea name="fulltitle" from="base_textarea">
+                <area>10,2,100%,100%</area>
+                <multiline>no</multiline>
+                <cutdown>yes</cutdown>
+                <font>descrip</font>
+            </textarea>
         </group>
 
     </window>
@@ -294,9 +497,8 @@
 
 
 
-
-    <!-- In the File Extensions screen the user can change 
-        the file extensions that determine which files 
+    <!-- In the File Extensions screen the user can change
+        the file extensions that determine which files
         shall be scanned and recognized as a video file -->
     <window name="file_associations">
 
@@ -326,12 +528,12 @@
         <textarea name="default_text" from="extension_text">
             <position>290,440</position>
             <value>Use default player:</value>
-        </textarea>      
+        </textarea>
         <textarea name="ignore_text" from="extension_text">
             <position>290,480</position>
             <value>Ignore:</value>
         </textarea>
-        
+
         <buttonlist name="extension_select" from="base_selector">
             <position>600,360</position>
         </buttonlist>
@@ -348,7 +550,7 @@
         <shape name="button_separator" from="base_background_shape">
             <area>281,530,703,1</area>
         </shape>
-        
+
         <button name="done_button" from="base_button">
             <position>405,545</position>
             <value>Done</value>
@@ -361,7 +563,7 @@
             <position>735,545</position>
             <value>Delete</value>
         </button>
-        
+
         <group name="base_helptext_group" from="base_helptext_group">
             <position>0,612</position>
         </group>
@@ -372,7 +574,7 @@
 
 
 
-    <!-- The Video Filter Dialog shows the screen where the 
+    <!-- The Video Filter Dialog shows the screen where the
         user can filter the list of videos by different criteries -->
     <window name="filter">
 
@@ -418,7 +620,7 @@
             <position>185,480</position>
             <value>Text Filter:</value>
         </textarea>
-        
+
         <textarea name="userrating_text" from="category_text">
             <position>650,240</position>
             <value>User Rating:</value>
@@ -484,11 +686,11 @@
         <buttonlist name="watched_select" from="base_selector">
             <position>870,440</position>
         </buttonlist>
-        
+
         <shape name="button_separator" from="base_background_shape">
             <area>175,530,928,1</area>
         </shape>
-        
+
         <button name="save_button" from="base_button">
             <position>485,545</position>
             <value>Save</value>
@@ -518,38 +720,81 @@
         window is popped up showing details before playback.
         (Main window) shows details about the slected video and the option to play it -->
     <window name="itemdetailpopup" include="base_video.xml">
-
         <imagetype name="fanart" from="base_background"/>
 
-        <textarea name="heading" from="base_heading">
-            <position>0,0</position>
-            <textarea name="text">
-                <value>Video Details</value>
-            </textarea>
+        <textarea name="heading">
         </textarea>
 
         <shape name="video_background" from="base_background_shape">
-            <area>145,170,1000,395</area>
+            <area>25,25,100%-25,100%-25</area>
         </shape>
-        <group name="video_large_cover_group" from="base_video_large_cover_group">
-            <position>145,170</position>
+
+        <group name="video_lg_cover_group">
+            <area>40,35,100%,100%</area>
+            <imagetype name="coverart_background_image">
+                <area>0,0,442,640</area>
+                <mask>images/media/movie_cover_mask_lg.png</mask>
+                <filename>images/media/movie_bg.png</filename>
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+            <imagetype name="coverart">
+                <area>0,0,442,650</area>
+                <mask>images/media/movie_cover_mask_lg.png</mask>
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+            <imagetype name="coverart_border">
+                <area>0,0,442,640</area>
+                <filename>images/media/movie_cover_border.png</filename>
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
         </group>
         <shape name="video_large_cover_separator" from="base_background_shape">
-            <area>425,171,1,393</area>
+            <area>500,50,2,600</area>
         </shape>
-        <group name="video_detailed_description_group" from="base_video_detailed_description_group">
-            <position>425,170</position>
-            <textarea name="description">
-                <area>15,95,350,230</area>
+        <group name="video_detailed_description_group">
+            <position>550,50</position>
+            <textarea name="title">
+                <area>0,10,600,20</area>
             </textarea>
+            <textarea name="year">
+                <area>0,35,600,20</area>
+            </textarea>
+            <shape name="title_separator" from="base_background_shape">
+                <area>0,80,650,2</area>
+            </shape>
+            <textarea name="director_label">
+                <area>0,100,125,20</area>
+                <value>Directed By:</value>
+            </textarea>
+            <textarea name="director">
+                <area>125,100,500,20</area>
+            </textarea>
+            <textarea name="cast_label">
+                <area>0,135,125,200</area>
+                <value>Starring:</value>
+            </textarea>
+            <textarea name="cast">
+                <area>125,135,500,200</area>
+                <multiline>true</multiline>
+            </textarea>
+            <textarea name="description">
+                <area>0,300,600,300</area>
+                <multiline>true</multiline>
+            </textarea>
+            <imagetype name="userratingstate_background" from="base_rating_background">
+                <position>80,38</position>
+            </imagetype>
+            <statetype name="userratingstate" from="base_rating">
+                <position>80,38</position>
+            </statetype>
         </group>
 
         <button name="play_button" from="base_button">
             <value>Play</value>
-            <position>440,515</position>
+            <position>550,600</position>
         </button>
         <button name="done_button" from="base_button">
-            <position>640,515</position>
+            <position>750,600</position>
             <value>Back</value>
         </button>
 
@@ -559,7 +804,7 @@
 
 
 
-    <!-- The Edit Metadata Screen allows to edit 
+    <!-- The Edit Metadata Screen allows to edit
         the available metadata of the video -->
     <window name="edit_metadata">
 
@@ -696,7 +941,7 @@
         <shape name="left_separator" from="base_background_shape">
             <area>870,91,1,505</area>
         </shape>
-        
+
         <textarea name="description_text" from="title_text">
             <position>885,105</position>
             <value>Plot:</value>
@@ -728,87 +973,67 @@
                 <multiline>true</multiline>
             </textarea>
         </textedit>
-        
+
         <textarea name="coverart_text_label" from="title_text">
             <position>885,305</position>
             <value>Cover Art:</value>
         </textarea>
         <button name="coverart_button" from="base_searchbutton">
-            <area>1055,305,32,32</area>
+            <area>1045,305,32,32</area>
         </button>
-        <button name="net_coverart_button" from="base_button">
-            <area>1100,305,32,32</area>
-            <value>Find Online...</value>
-        </button>
-        <!--<textarea name="coverart_text" from="base_textarea">
-            <area>1090,335,160,36</area>
+        <textarea name="coverart_text" from="base_textarea">
+            <area>1090,305,160,36</area>
             <value>Undefined</value>
-            <scroll direction="horizontal" rate="35"/>
-        </textarea>-->
+            <scroll direction="horizontal"/>
+        </textarea>
 
         <textarea name="banner_text_label" from="title_text">
             <position>885,345</position>
             <value>Banner:</value>
         </textarea>
         <button name="banner_button" from="base_searchbutton">
-            <position>1055,345</position>
+            <position>1045,345</position>
         </button>
-        <button name="net_banner_button" from="base_button">
-            <area>1100,345,32,32</area>
-            <value>Find Online...</value>
-        </button>
-        <!--<textarea name="banner_text" from="coverart_text">
+        <textarea name="banner_text" from="coverart_text">
             <position>1090,345</position>
             <value>Undefined</value>
-        </textarea>-->
+        </textarea>
 
         <textarea name="trailer_text_label" from="title_text">
             <position>885,385</position>
             <value>Trailer:</value>
         </textarea>
         <button name="trailer_button" from="base_searchbutton">
-            <position>1055,385</position>
+            <position>1045,385</position>
         </button>
-        <button name="net_trailer_button" from="base_button">
-            <area>1100,385,32,32</area>
-            <value>Find Online...</value>
-        </button>
-        <!--<textarea name="trailer_text" from="coverart_text">
+        <textarea name="trailer_text" from="coverart_text">
             <position>1090,385</position>
             <value>Undefined</value>
-        </textarea>-->
+        </textarea>
 
         <textarea name="fanart_text_label" from="title_text">
             <position>885,425</position>
             <value>Fanart:</value>
         </textarea>
         <button name="fanart_button" from="base_searchbutton">
-            <position>1055,425</position>
+            <position>1045,425</position>
         </button>
-        <button name="net_fanart_button" from="base_button">
-            <area>1100,425,32,32</area>
-            <value>Find Online...</value>
-        </button>
-        <!--<textarea name="fanart_text" from="coverart_text">
+        <textarea name="fanart_text" from="coverart_text">
             <position>1090,425</position>
             <value>Undefined</value>
-        </textarea>-->
+        </textarea>
 
         <textarea name="screenshot_text_label" from="title_text">
             <position>885,465</position>
             <value>Screenshot:</value>
         </textarea>
         <button name="screenshot_button" from="base_searchbutton">
-            <position>1055,465</position>
+            <position>1045,465</position>
         </button>
-        <button name="net_screenshot_button" from="base_button">
-            <area>1100,465,32,32</area>
-            <value>Find Online...</value>
-        </button>
-        <!--<textarea name="screenshot_text" from="coverart_text">
+        <textarea name="screenshot_text" from="coverart_text">
             <position>1090,465</position>
             <value>Undefined</value>
-        </textarea>-->
+        </textarea>
 
         <textarea name="player_text" from="title_text">
             <area>885,505,300,36</area>
@@ -832,7 +1057,7 @@
         <shape name="button_separator" from="base_background_shape">
             <area>311,595,953,1</area>
         </shape>
-        
+
         <button name="done_button" from="base_button">
             <position>665,610</position>
             <value>Save</value>
@@ -848,7 +1073,7 @@
 
 
 
-    <!-- The Player Settings Screen shows the settings how to 
+    <!-- The Player Settings Screen shows the settings how to
         play the videos. Either by the internal or external player. -->
     <window name="playersettings">
 
@@ -937,11 +1162,11 @@
         <buttonlist name="blurayregionlist" from="base_selector_wide">
             <position>570,480</position>
         </buttonlist>
-        
+
         <shape name="button_separator" from="base_background_shape">
             <area>306,530,653,1</area>
         </shape>
-        
+
         <button name="ok" from="base_button">
             <position>485,545</position>
             <value>OK</value>
@@ -950,7 +1175,7 @@
             <position>650,545</position>
             <value>Cancel</value>
         </button>
-        
+
         <group name="base_helptext_group" from="base_helptext_group">
             <position>0,612</position>
         </group>
@@ -961,8 +1186,8 @@
 
 
 
-    <!-- The Metadata Settings Screen shows the settings how 
-        the data for the videos will be retrieved. The 
+    <!-- The Metadata Settings Screen shows the settings how
+        the data for the videos will be retrieved. The
         user can choose from different movie grabbers. -->
     <window name="metadatasettings">
 
@@ -1020,7 +1245,7 @@
         <shape name="button_separator" from="base_background_shape">
             <area>351,530,578,1</area>
         </shape>
-        
+
         <button name="ok" from="base_button">
             <position>485,545</position>
             <value>OK</value>
@@ -1029,7 +1254,7 @@
             <position>650,545</position>
             <value>Cancel</value>
         </button>
-        
+
         <group name="base_helptext_group" from="base_helptext_group">
             <position>0,612</position>
         </group>

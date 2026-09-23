@@ -7,9 +7,6 @@
         together with some detail information about the recording -->
     <window name="watchrecordings" include="base_recording.xml">
 
-        <!-- background, name of screen and the clock -->
-        <imagetype name="fanart" from="base_background" />
-        
         <textarea name="heading" from="base_heading">
             <position>0,0</position>
             <textarea name="text">
@@ -37,7 +34,6 @@
                     <area>0,0,350,36</area>
                     <textarea name="buttontext" from="base_textarea">
                         <area>8,0,100%-16,36</area>
-                        <scroll direction="horizontal" rate="35" />
                     </textarea>
                 </state>
                 <state name="inactive" from="active" />
@@ -54,13 +50,12 @@
 
         <!-- the selection of the available recordings in the group -->
         <buttonlist name="recordings" from="base_buttonlist">
-            <area>395,65,850,355</area>            
+            <area>395,65,850,355</area>
             <statetype name="buttonitem">
                 <state name="active">
                     <area>0,0,850,36</area>
                     <textarea name="titlesubtitle" from="base_textarea">
                         <area>8,0,512,36</area>
-                        <scroll direction="horizontal" />
                     </textarea>
                     <textarea name="00x00" from="base_textarea">
                         <area>530,5,60,30</area>
@@ -73,7 +68,7 @@
                     <textarea name="starttime" from="base_textarea">
                         <area>690,0,80,36</area>
                         <align>allcenter</align>
-                    </textarea>                    
+                    </textarea>
                     <imagetype name="no_jobstate" from="base_icon_inactive">
                         <filename>images/icons/processing.png</filename>
                         <area>778,3,30,30</area>
@@ -151,7 +146,7 @@
 
 
 
-    
+
 
     <!-- The Change View popup.
         Shows a list of icons that describe the status of a recording  -->
@@ -303,7 +298,7 @@
     <!-- The Group selector popup.
         Shows a list of available groups that can be preselected -->
     <window name="groupselector">
-        
+
         <shape name="darken_background" from="base_darken_background" />
 
         <shape name="dialog_background" from="base_background_shape_dark">
@@ -331,7 +326,7 @@
 
 
 
-    <!-- The Help popup which shows a list of icons 
+    <!-- The Help popup which shows a list of icons
          that describe the status of a recording  -->
     <window name="iconhelp">
 
@@ -402,7 +397,7 @@
                             </imagetype>
                         </state>
 
-                        <state name="mono">                            
+                        <state name="mono">
                             <imagetype name="statusimage" from="base_icon_selected">
                                 <filename>images/icons/audio/dolby_1.0.png</filename>
                                 <area>6,5,78,26</area>
@@ -526,7 +521,7 @@
                 <value>Edit Recording Metadata</value>
             </textarea>
         </textarea>
-        
+
         <shape name="editmetadata_background" from="base_background_shape">
             <area>340,155,600,442</area>
         </shape>
@@ -550,7 +545,7 @@
         <textarea name="seasonlabel" from="titlelabel">
             <position>355,290</position>
             <value>Season:</value>
-        </textarea>        
+        </textarea>
 
         <textarea name="episodelabel" from="titlelabel">
             <position>355,330</position>
@@ -561,23 +556,23 @@
             <position>355,370</position>
             <value>Description:</value>
         </textarea>
-        
+
         <textedit name="title" from="base_textedit">
             <position>550,170</position>
         </textedit>
-        
+
         <textedit name="subtitle" from="base_textedit">
             <position>550,210</position>
         </textedit>
-        
+
         <textedit name="inetref" from="base_textedit">
             <position>550,250</position>
         </textedit>
-        
+
         <spinbox name="season" from="base_spinbox">
             <position>550,290</position>
         </spinbox>
-        
+
         <spinbox name="episode" from="base_spinbox">
             <position>550,330</position>
         </spinbox>
@@ -608,7 +603,7 @@
                 <multiline>true</multiline>
             </textarea>
         </textedit>
-        
+
         <shape name="button_separator" from="base_background_shape">
             <area>341,530,598,1</area>
         </shape>
@@ -617,7 +612,7 @@
             <position>565,545</position>
             <value>OK</value>
         </button>
-        
+
     </window>
 
 </mythuitheme>

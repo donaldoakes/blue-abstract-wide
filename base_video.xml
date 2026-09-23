@@ -24,15 +24,15 @@
         </imagetype>
 
     </group>
-    
-    
-    
-    
-    
+
+
+
+
+
     <!-- Shows all information about the selected video without a border
          This is usually used in the itemdetailpopup window -->
     <group name="base_video_detailed_description_group">
-        
+
         <textarea name="title" from="base_textarea">
             <area>15,15,350,30</area>
             <font>title</font>
@@ -59,7 +59,7 @@
             <multiline>yes</multiline>
             <scroll direction="vertical" rate="10"/>
             <align>right,top</align>
-        </textarea>        
+        </textarea>
 
         <shape name="left_separator" from="base_background_shape">
             <area>380,1,1,393</area>
@@ -107,7 +107,7 @@
             <multiline>yes</multiline>
             <scroll direction="vertical" rate="10"/>
         </textarea>
-        <textarea name="genres" from="base_textarea">
+        <textarea name="genres" from="base_textarea" from="cast">
             <area>535,155,170,65</area>
             <scroll direction="vertical" rate="10"/>
         </textarea>
@@ -136,11 +136,11 @@
         </statetype>
 
     </group>
-        
-        
-        
-        
-        
+
+
+
+
+
     <!-- Shows the title and the description of the selected video -->
     <group name="base_video_description_group">
 
@@ -195,7 +195,7 @@
             <area>365,15,120,30</area>
             <align>right,vcenter</align>
         </textarea>
-        
+
         <!-- shows the description to the different details -->
         <textarea name="director_label" from="base_textarea" depends="director">
             <area>0,15,140,30</area>
@@ -230,7 +230,7 @@
             <area>180,165,220,30</area>
             <value>Parental Level:</value>
         </textarea>
-        
+
         <!-- shows the values to the different details -->
         <textarea name="director" from="base_textarea">
             <area>145,15,180,30</area>
@@ -265,11 +265,11 @@
         </statetype>
 
     </group>
-    
-    
-    
-    
-    
+
+
+
+
+
     <!-- the list of the available videos -->
     <group name="base_video_gallery_list_group">
 
@@ -289,11 +289,12 @@
                         <filename>images/media/movie_bg.png</filename>
                         <preserveaspect>true</preserveaspect>
                     </imagetype>
-
+                    <!--
                     <textarea name="buttontext" from="base_textarea">
                         <area>15,15,100,20</area>
                     </textarea>
-                    
+                    -->
+
                     <!-- this is the actual cover image that will be shown if its
                         available, otherwise only the background image is visible -->
                     <imagetype name="buttonimage">
@@ -303,6 +304,7 @@
                     </imagetype>
 
                     <!-- marks the video as watched -->
+                    <!--
                     <statetype name="watchedstate">
                         <position>79,4</position>
                         <state name="yes">
@@ -318,7 +320,8 @@
                             </imagetype>
                         </state>
                     </statetype>
-                    
+                    -->
+
                     <!-- the node is a folder and it is currently not selected -->
                     <statetype name="nodetype">
                         <position>0,0</position>
@@ -337,12 +340,12 @@
                             </imagetype>
                         </state>
                     </statetype>
-                    
+
                     <imagetype name="background_image_border">
                         <area>0,0,133,192</area>
                         <filename>images/media/movie_item_nfborder.png</filename>
                     </imagetype>
-                    
+
                     <!-- shows how many videos / directories are in this directory -->
                     <textarea name="childcount" from="base_textarea">
                         <area>42,163,60,20</area>
@@ -352,10 +355,10 @@
                 <!-- These two states are not used -->
                 <state name="inactive" from="active"/>
                 <state name="selectedinactive" from="active"/>
-                    
+
                 <state name="selectedactive">
                     <area>-26,-37,133,192</area>
-                    
+
                     <imagetype name="background_image">
                         <area>0,0,185,267</area>
                         <mask>images/media/movie_item_fmask.png</mask>
@@ -363,10 +366,12 @@
                         <preserveaspect>true</preserveaspect>
                     </imagetype>
 
+                    <!--
                     <textarea name="buttontext" from="base_textarea">
                         <area>20,20,150,20</area>
                     </textarea>
-                    
+                    -->
+
                     <!-- this is the actual cover image that will be shown if its
                         available, otherwise only the background image is visible -->
                     <imagetype name="buttonimage">
@@ -376,6 +381,7 @@
                     </imagetype>
 
                     <!-- marks the video as watched -->
+                    <!--
                     <statetype name="watchedstate">
                         <position>111,9</position>
                         <state name="yes">
@@ -391,6 +397,7 @@
                             </imagetype>
                         </state>
                     </statetype>
+                    -->
 
                     <!-- the node is a folder and it is currently selected -->
                     <statetype name="nodetype">
@@ -415,7 +422,7 @@
                         <area>0,0,185,267</area>
                         <filename>images/media/movie_item_fborder.png</filename>
                     </imagetype>
-                    
+
                     <!-- shows how many videos / directories are in this directory -->
                     <textarea name="childcount" from="base_textarea">
                         <area>52,230,66,20</area>
@@ -425,5 +432,5 @@
         </buttonlist>
 
     </group>
-    
+
 </mythuitheme>
