@@ -107,7 +107,7 @@
             <multiline>yes</multiline>
             <scroll direction="vertical" rate="10"/>
         </textarea>
-        <textarea name="genres" from="base_textarea" from="cast">
+        <textarea name="genres" from="cast">
             <area>535,155,170,65</area>
             <scroll direction="vertical" rate="10"/>
         </textarea>
@@ -321,7 +321,6 @@
                         </state>
                     </statetype>
                     -->
-
                     <!-- the node is a folder and it is currently not selected -->
                     <statetype name="nodetype">
                         <position>0,0</position>
@@ -371,7 +370,6 @@
                         <area>20,20,150,20</area>
                     </textarea>
                     -->
-
                     <!-- this is the actual cover image that will be shown if its
                         available, otherwise only the background image is visible -->
                     <imagetype name="buttonimage">
@@ -398,7 +396,6 @@
                         </state>
                     </statetype>
                     -->
-
                     <!-- the node is a folder and it is currently selected -->
                     <statetype name="nodetype">
                         <position>0,0</position>
